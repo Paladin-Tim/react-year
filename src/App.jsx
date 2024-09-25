@@ -1,6 +1,15 @@
-import ReactLogo from "./assets/react.svg?react";
+import { createElement } from "react";
+import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
+
+function Logo({ path }) {
+  return createElement("img", {
+    className: "logo",
+    alt: "React logo",
+    src: path,
+  });
+}
 
 export const App = () => {
   const date = new Date();
@@ -12,17 +21,13 @@ export const App = () => {
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
         <a href="https://react.dev" target="_blank">
-          <ReactLogo className="logo" width={"6rem"}></ReactLogo>
+          {createElement(Logo, { path: reactLogo })}
         </a>
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-
-        <p>
-          The year is {date.getFullYear()}
-        </p>
+        <p>The year is {date.getFullYear()}</p>
       </div>
-
     </>
   );
 };
