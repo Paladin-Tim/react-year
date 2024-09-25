@@ -3,6 +3,8 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 
+// На мой взгляд, все приложение сейчас написано в декларативном стиле
+
 function Logo({ path }) {
   return createElement("img", {
     className: "logo",
